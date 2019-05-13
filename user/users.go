@@ -11,5 +11,5 @@ import (
 func GetUser(w http.ResponseWriter, req *http.Request) {
 	vars := mux.Vars(req)
 	w.WriteHeader(http.StatusOK)
-	fmt.Fprintf(w, "User: %v\n", vars["name"])
+	fmt.Fprintf(w, "Get user: %v\n", vars["name"])
 }

@@ -1,4 +1,4 @@
-package blog
+package main
 
 import (
 	"log"
@@ -6,10 +6,12 @@ import (
 	"time"
 
 	"github.com/bradleyzhou/blog-api-go/route"
+	"github.com/gorilla/mux"
 )
 
 func main() {
-	router := route.NewRouter()
+	router := mux.NewRouter()
+	route.RegisterV1Routes(router)
 
 	server := &http.Server{
 		Handler:      router,
